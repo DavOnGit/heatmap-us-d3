@@ -1,0 +1,117 @@
+body {
+				height: 100%;
+				margin: 0;
+				padding: 0;
+				background-color: #fff;
+				font-family: "Roboto", Verdana, sans-serif;
+				font-size: 14px;
+}
+
+.chart {
+				position: absolute;
+				min-width: 100%;
+				min-height: 100%;
+}
+
+.title, .subtitle {
+				text-anchor: middle;
+}
+
+.axis path {
+				display: none;
+}
+
+.axis.l .tick text {
+				font-size: 10px;
+}
+
+rect, .axis {
+				shape-rendering: crispEdges;
+}
+
+.cels-sym {
+				font-size: 13px;
+}
+
+.tlTp {
+				display: none;
+				position: absolute;
+				width: 100px;
+				height: 50px;
+				color: #111;
+				text-align: center;
+				padding: 5px;
+				border-radius: 6px;
+				pointer-events: none;
+				box-shadow: 0 0px 6px 0px #333;
+}
+
+.tlTp h4, .tlTp p {
+				padding: 0;
+				margin: 0;
+}
+
+.tlTp p {
+				font-size: 10px;
+				padding-top: 2px;
+}
+
+.no-select {
+				-webkit-touch-callout: none;
+				/* iOS Safari */
+				-webkit-user-select: none;
+				/* Chrome/Safari/Opera */
+				/* Konqueror */
+				-moz-user-select: none;
+				/* Firefox */
+				-ms-user-select: none;
+				user-select: none;
+}
+
+#link-ghub {
+				position: absolute;
+				top: 0;
+				right: 0;
+}
+
+#link-ghub:hover .octo-arm {
+				-webkit-animation: octocat-wave .56s;
+				        animation: octocat-wave .56s;
+}
+
+#link-ghub svg {
+				width: 80px;
+				height: 80px;
+				color: #ffb919;
+				fill: #4479B2;
+}
+
+@-webkit-keyframes octocat-wave {
+				0%, 100% {
+								-webkit-transform: rotate(0);
+								        transform: rotate(0);
+				}
+				20%, 60% {
+								-webkit-transform: rotate(-20deg);
+								        transform: rotate(-20deg);
+				}
+				40%, 80% {
+								-webkit-transform: rotate(10deg);
+								        transform: rotate(10deg);
+				}
+}
+
+@keyframes octocat-wave {
+				0%, 100% {
+								-webkit-transform: rotate(0);
+								        transform: rotate(0);
+				}
+				20%, 60% {
+								-webkit-transform: rotate(-20deg);
+								        transform: rotate(-20deg);
+				}
+				40%, 80% {
+								-webkit-transform: rotate(10deg);
+								        transform: rotate(10deg);
+				}
+}
