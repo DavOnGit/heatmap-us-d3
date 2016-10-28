@@ -12,7 +12,7 @@ See it live: [DEMO](https://davongit.github.io/heatmap-us-d3/)
 
 ```sh
 $ git clone https://github.com/DavOnGit/heatmap-us-d3.git # or clone your own fork
-$ cd scatterplot-and-doping
+$ cd heatmap-us-d3
 $ npm install
 $ npm start
 ```

@@ -49,10 +49,8 @@ var Heatmap = (function(window,d3) {
 		legSc = d3.scaleBand().domain(legDomArr);
 
 		//initialize axis
-		//xAxis = d3.axisTop().tickSize(4).tickSizeOuter(0);
+		xAxis = d3.axisBottom().tickSize(4).tickSizeOuter(0);
 		yAxis = d3.axisLeft().tickSize(4).tickSizeOuter(0);
-		xAxBot = d3.axisBottom().tickSize(4).tickSizeOuter(0);
-		//yAxLft = d3.axisRight().tickSize(4).tickSizeOuter(0);
 		legAxis = d3.axisBottom().tickSize(0).tickSizeOuter(0);
 
 		//initialize svg elements
@@ -110,18 +108,13 @@ var Heatmap = (function(window,d3) {
 			.style("font-size", (userW < 1000 ? 10 : 12) + "px");
 
 		//update axis, rect and legend
-		//xAxis.scale(xSc);
+		xAxis.scale(xSc);
 		yAxis.scale(ySc);
-		xAxBot.scale(xSc);
-		//yAxLft.scale(ySc);
 		legAxis.scale(legSc);
 
-		//chartSvg.select(".x.axis").attr("transform", "translate(0, " + -1 + ")").call(xAxis)
-			//.selectAll("g").attr("opacity", "0").filter(":nth-child(20n+9)").attr("opacity", "1");
-		chartSvg.select(".y.axis").attr("transform", "translate(" + 0 + " 0)").call(yAxis);
-		chartSvg.select(".x2.axis").attr("transform", "translate(0, " + h  + ")").call(xAxBot)
+		chartSvg.select(".x.axis").attr("transform", "translate(0, " + h + ")").call(xAxis)
 			.selectAll("g").attr("opacity", "0").filter(":nth-child(20n+9)").attr("opacity", "1");
-		//chartSvg.select(".y2.axis").attr("transform", "translate(" + w + " 0)").call(yAxLft);
+		chartSvg.select(".y.axis").attr("transform", "translate(" + 0 + " 0)").call(yAxis);
 
 		path.attr("x", function(d) { return xSc(d.year); })
 			.attr("y", function(d) { return ySc(yDomArr[d.month - 1]); })
@@ -176,14 +169,5 @@ var Heatmap = (function(window,d3) {
 	}
 
 	d3.select(window).on("resize", render);
-	var resizeTimeId;
 
-	function resize() {
-		clearTimeout(resizeTimeId);
-		resizeTimeId = window.setTimeout(function () {
-			render();
-		}, 500);
-	}
-
-//window.addEventListener('resize', resize);
 })(window,d3);
